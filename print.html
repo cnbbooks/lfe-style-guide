@@ -95,7 +95,7 @@
 
     <nav id="sidebar" class="sidebar" aria-label="Table of contents">
         <div class="sidebar-scrollbox">
-            <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">The LFE Style Guide</a></li><li class="chapter-item expanded affix "><a href="title.html">Title Page</a></li><li class="chapter-item expanded affix "><a href="copyright.html">Copyright</a></li><li class="chapter-item expanded affix "><a href="preface.html">Preface</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="intro/index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="feedback.html">Feedback</a></li><li class="chapter-item expanded affix "><a href="redirects/docs.html">LFE Documentation</a></li><li class="chapter-item expanded affix "><a href="redirects/rebar3.html">LFE rebar3 Plugin</a></li><li class="chapter-item expanded affix "><a href="redirects/mdbook.html">Built with mdBook</a></li></ol>
+            <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">The LFE Style Guide</a></li><li class="chapter-item expanded affix "><a href="title.html">Title Page</a></li><li class="chapter-item expanded affix "><a href="copyright.html">Copyright</a></li><li class="chapter-item expanded affix "><a href="preface.html">Preface</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="intro/index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="format/index.html"><strong aria-hidden="true">2.</strong> Formatting</a></li><li class="chapter-item expanded "><a href="names/index.html"><strong aria-hidden="true">3.</strong> Naming</a></li><li class="chapter-item expanded "><a href="docs/index.html"><strong aria-hidden="true">4.</strong> Documentation</a></li><li class="chapter-item expanded "><a href="repr/index.html"><strong aria-hidden="true">5.</strong> Data Representation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="repr/records.html"><strong aria-hidden="true">5.1.</strong> Records</a></li></ol></li><li class="chapter-item expanded "><a href="errors/index.html"><strong aria-hidden="true">6.</strong> Errors</a></li><li class="chapter-item expanded "><a href="psm/index.html"><strong aria-hidden="true">7.</strong> Processes, Servers and Messages</a></li><li class="chapter-item expanded "><strong aria-hidden="true">8.</strong> Software Engineering</li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="feedback.html">Feedback</a></li><li class="chapter-item expanded affix "><a href="redirects/docs.html">LFE Documentation</a></li><li class="chapter-item expanded affix "><a href="redirects/rebar3.html">LFE rebar3 Plugin</a></li><li class="chapter-item expanded affix "><a href="redirects/mdbook.html">Built with mdBook</a></li></ol>
         </div>
         <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
     </nav>
@@ -211,7 +211,9 @@ by Duncan McGreggor</p>
 <br/>
 <br/>
 <br/>
-<p>© 2013-2020, Duncan McGreggor</p>
+<p>Portions © 1992, 1993 Peter Norvig</p>
+<p>Portions © 1992, 1993 Kent Pitman</p>
+<p>Portions © 2013-2020, Duncan McGreggor</p>
 <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a></p>
 <p><a href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License" /></a></p>
 <br/>
@@ -223,6 +225,7 @@ by Duncan McGreggor</p>
 <ul>
 <li><a href="https://google.github.io/styleguide/lispguide.xml">Google Common Lisp Style Guide</a></li>
 <li><a href="https://lisp-lang.org/style-guide/">A Guide to Writing Good, Maintainable Common Lisp Code</a></li>
+<li><a href="http://norvig.com/luv-slides.ps">Tutorial on Good Lisp Programming Style</a></li>
 <li><a href="http://www.erlang.se/doc/programming_rules.shtml">Erlang Programming Rules and Conventions</a></li>
 <li><a href="https://github.com/inaka/erlang_guidelines">Erlang Coding Standards &amp; Guidelines</a></li>
 <li><a href="https://github.com/bbatsov/clojure-style-guide">The Clojure Style Guide</a></li>
@@ -232,6 +235,13 @@ by Duncan McGreggor</p>
 <p>In geneeral we suggest following the LFE style as outlined here if you are creating a new project. If you are contributing to a project maintained by someonoe in the community, we recommend consistency: using the style adopted by <em>that</em> project (for any contributions to that project).</p>
 <p>Above all, enjoy the parenthesis.</p>
 <h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
+<h1><a class="header" href="#formatting" id="formatting">Formatting</a></h1>
+<h1><a class="header" href="#naming" id="naming">Naming</a></h1>
+<h1><a class="header" href="#documentation" id="documentation">Documentation</a></h1>
+<h1><a class="header" href="#data-representation" id="data-representation">Data Representation</a></h1>
+<h1><a class="header" href="#records" id="records">Records</a></h1>
+<h1><a class="header" href="#errors" id="errors">Errors</a></h1>
+<h1><a class="header" href="#processes-servers-and-messages" id="processes-servers-and-messages">Processes, Servers and Messages</a></h1>
 <h1><a class="header" href="#feedback" id="feedback">Feedback</a></h1>
 <meta http-equiv="refresh" content="0; URL=http://docs.lfe.io/" />
 <meta http-equiv="refresh" content="0; URL=https://lfe-rebar3.github.io/" />
