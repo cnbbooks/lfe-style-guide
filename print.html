@@ -95,7 +95,7 @@
 
     <nav id="sidebar" class="sidebar" aria-label="Table of contents">
         <div class="sidebar-scrollbox">
-            <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">The LFE Style Guide</a></li><li class="chapter-item expanded affix "><a href="title.html">Title Page</a></li><li class="chapter-item expanded affix "><a href="copyright.html">Copyright</a></li><li class="chapter-item expanded affix "><a href="preface.html">Preface</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="intro/index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="format/index.html"><strong aria-hidden="true">2.</strong> Formatting</a></li><li class="chapter-item expanded "><a href="names/index.html"><strong aria-hidden="true">3.</strong> Naming</a></li><li class="chapter-item expanded "><a href="docs/index.html"><strong aria-hidden="true">4.</strong> Documentation</a></li><li class="chapter-item expanded "><a href="repr/index.html"><strong aria-hidden="true">5.</strong> Data Representation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="repr/records.html"><strong aria-hidden="true">5.1.</strong> Records</a></li></ol></li><li class="chapter-item expanded "><a href="errors/index.html"><strong aria-hidden="true">6.</strong> Errors</a></li><li class="chapter-item expanded "><a href="psm/index.html"><strong aria-hidden="true">7.</strong> Processes, Servers and Messages</a></li><li class="chapter-item expanded "><strong aria-hidden="true">8.</strong> Software Engineering</li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="feedback.html">Feedback</a></li><li class="chapter-item expanded affix "><a href="redirects/docs.html">LFE Documentation</a></li><li class="chapter-item expanded affix "><a href="redirects/rebar3.html">LFE rebar3 Plugin</a></li><li class="chapter-item expanded affix "><a href="redirects/mdbook.html">Built with mdBook</a></li></ol>
+            <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">The LFE Style Guide</a></li><li class="chapter-item expanded affix "><a href="title.html">Title Page</a></li><li class="chapter-item expanded affix "><a href="copyright.html">Copyright</a></li><li class="chapter-item expanded affix "><a href="preface.html">Preface</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="intro/index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="format/index.html"><strong aria-hidden="true">2.</strong> Formatting</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="format/line-len.html"><strong aria-hidden="true">2.1.</strong> Line Length</a></li><li class="chapter-item expanded "><a href="format/spelling.html"><strong aria-hidden="true">2.2.</strong> Spelling and Abbreviations</a></li></ol></li><li class="chapter-item expanded "><a href="names/index.html"><strong aria-hidden="true">3.</strong> Naming</a></li><li class="chapter-item expanded "><a href="docs/index.html"><strong aria-hidden="true">4.</strong> Documentation</a></li><li class="chapter-item expanded "><a href="repr/index.html"><strong aria-hidden="true">5.</strong> Data Representation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="repr/records.html"><strong aria-hidden="true">5.1.</strong> Records</a></li></ol></li><li class="chapter-item expanded "><a href="errors/index.html"><strong aria-hidden="true">6.</strong> Errors</a></li><li class="chapter-item expanded "><a href="psm/index.html"><strong aria-hidden="true">7.</strong> Processes, Servers and Messages</a></li><li class="chapter-item expanded "><a href="swe/index.html"><strong aria-hidden="true">8.</strong> Software Engineering</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="swe/principles.html"><strong aria-hidden="true">8.1.</strong> Principles</a></li><li class="chapter-item expanded "><a href="swe/priorities.html"><strong aria-hidden="true">8.2.</strong> Priorities</a></li><li class="chapter-item expanded "><a href="swe/architecture.html"><strong aria-hidden="true">8.3.</strong> Architecture</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="feedback.html">Feedback</a></li><li class="chapter-item expanded affix "><a href="redirects/docs.html">LFE Documentation</a></li><li class="chapter-item expanded affix "><a href="redirects/rebar3.html">LFE rebar3 Plugin</a></li><li class="chapter-item expanded affix "><a href="redirects/mdbook.html">Built with mdBook</a></li></ol>
         </div>
         <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
     </nav>
@@ -236,12 +236,68 @@ by Duncan McGreggor</p>
 <p>Above all, enjoy the parenthesis.</p>
 <h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
 <h1><a class="header" href="#formatting" id="formatting">Formatting</a></h1>
+<h1><a class="header" href="#line-length" id="line-length">Line Length</a></h1>
+<p>You should format source code so that no line is longer than 80 characters.</p>
+<p>Old text terminals were standardized on 80 columns which they in turn inherited from even older punch card technology. While modern computer screens support vastly more than this, there are a couple of considerations to keep in mind that motivate us to continue supporting an 80 character limit:</p>
+<ul>
+<li>Displaying code in web pages, paste-bins, gist services, etc., is much cleaner and easier to read when the character width is limited to 80 characters.</li>
+<li>Most modern text editors allow for multiple panes, allowing several files to be open side-by-side, supporting the easy editing and referencing of multiple files simultaneously; limiting these files to 80 characters in width facilitates this type of workflow.</li>
+<li>Code that has to be examined under emergency circumstances (such as via a terminal attached to a crash cart in a data center, or in an emergency shell session without a graphical window manager) is much easier to read quickly when character width is limited to 80.</li>
+<li>Lastly, such a convention encourages good naming discipline!</li>
+</ul>
+<h1><a class="header" href="#spelling-and-abbreviations" id="spelling-and-abbreviations">Spelling and Abbreviations</a></h1>
+<p>Use correct spelling in your comments, and most importantly in your identifiers. The LFE documentation projects (books and reference materials) use <code>aspell</code> and include <code>make</code> targets for running various spell-checking tasks across the project files. Feel free to borrow from these for your own projects.</p>
+<p>Use common and domain-specific abbreviations, and must be consistent with these abbreviations. You may abbreviate lexical variables of limited scope in order to avoid overly-long symbol names.</p>
+<p>If you're not sure, consult a dictionary, look up alternative spellings in a dictionary, or ask a local expert.</p>
+<p>Here are examples of choosing the correct spelling:</p>
+<ul>
+<li>Use &quot;complimentary&quot; in the sense of a meal or beverage that is not paid for by the recipient, not &quot;complementary&quot;.</li>
+<li>Use &quot;existent&quot; and &quot;nonexistent&quot;, not &quot;existant&quot;. Use &quot;existence&quot;, not &quot;existance&quot;.</li>
+<li>Use &quot;hierarchy&quot; not &quot;heirarchy&quot;.</li>
+<li>Use &quot;precede&quot; not &quot;preceed&quot;.</li>
+<li>Use &quot;weird&quot;, not &quot;wierd&quot;.</li>
+</ul>
+<p>Make appropriate exceptions for industry standard nomenclature/jargon, including plain misspellings. For instance:</p>
+<ul>
+<li>Use &quot;referer&quot;, not &quot;referrer&quot;, in the context of the HTTP protocol.</li>
+</ul>
 <h1><a class="header" href="#naming" id="naming">Naming</a></h1>
 <h1><a class="header" href="#documentation" id="documentation">Documentation</a></h1>
 <h1><a class="header" href="#data-representation" id="data-representation">Data Representation</a></h1>
 <h1><a class="header" href="#records" id="records">Records</a></h1>
 <h1><a class="header" href="#errors" id="errors">Errors</a></h1>
 <h1><a class="header" href="#processes-servers-and-messages" id="processes-servers-and-messages">Processes, Servers and Messages</a></h1>
+<h1><a class="header" href="#software-engineering" id="software-engineering">Software Engineering</a></h1>
+<h1><a class="header" href="#principles" id="principles">Principles</a></h1>
+<p>There are some basic principles for team software development that every developer must keep in mind. Whenever the detailed guidelines are inadequate, confusing or contradictory, refer back to these principles for guidance:</p>
+<ul>
+<li>Every developer's code must be easy for another developer to read, understand, and modify — even if the first developer isn't around to explain it. (This is the &quot;hit by a truck&quot; principle.)</li>
+<li>Everybody's code should look the same. Ideally, there should be no way to look at lines of code and recognize it as &quot;Alice's code&quot; by its style.</li>
+<li>Be precise.</li>
+<li>Be concise.</li>
+<li>Keep it simple.</li>
+<li>Use the smallest hammer for the job.</li>
+<li>Use common sense.</li>
+<li>Keep related code together. Minimize the amount of jumping around someone has to do to understand an area of code.</li>
+</ul>
+<h1><a class="header" href="#priorities" id="priorities">Priorities</a></h1>
+<p>When making decisions about how to write a given piece of code, aim for the following -ilities in this priority order:</p>
+<ul>
+<li>Usability by the customer</li>
+<li>Debuggability/Testability</li>
+<li>Readability/Comprehensibility</li>
+<li>Extensibility/Modifiability</li>
+<li>Efficiency (of the LFE code at runtime)</li>
+</ul>
+<p>Most of these are obvious.</p>
+<p>Usability by the customer means that the system has to do what the customer requires; it has to handle the customer's transaction volumes, uptime requirements; etc.</p>
+<p>For the LFE efficiency point, given two options of equivalent complexity, pick the one that performs better. (This is often the same as the one that conses less, i.e. allocates less storage from the heap.)</p>
+<p>Given two options where one is more complex than the other, pick the simpler option and revisit the decision only if profiling shows it to be a performance bottleneck.</p>
+<p>However, avoid premature optimization. Don't add complexity to speed up something that runs rarely, since in the long run, it matters less whether such code is fast.</p>
+<h1><a class="header" href="#architecture" id="architecture">Architecture</a></h1>
+<p>To build code that is robust and maintainable, it matters a lot how the code is divided into components, how these components communicate, how changes propagate as they evolve, and more importantly how the programmers who develop these components communicate as these components evolve.</p>
+<p>If your work affects other groups, might be reusable across groups, adds new components, has an impact on other groups (including QA or Ops), or otherwise isn't purely local, you must write it up using at least a couple of paragraphs, and get a design approval from the other parties involved before starting to write code — or be ready to scratch what you have when they object.</p>
+<p>If you don't know or don't care about these issues, ask someone who does.</p>
 <h1><a class="header" href="#feedback" id="feedback">Feedback</a></h1>
 <meta http-equiv="refresh" content="0; URL=http://docs.lfe.io/" />
 <meta http-equiv="refresh" content="0; URL=https://lfe-rebar3.github.io/" />

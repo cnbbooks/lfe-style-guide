@@ -4,7 +4,7 @@
 <head>
     <!-- Book generated using mdBook -->
     <meta charset="UTF-8">
-    <title>Introduction - The LFE Style Guide</title>
+    <title>Priorities - The LFE Style Guide</title>
     
     
 
@@ -93,7 +93,7 @@
 
     <nav id="sidebar" class="sidebar" aria-label="Table of contents">
         <div class="sidebar-scrollbox">
-            <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">The LFE Style Guide</a></li><li class="chapter-item expanded affix "><a href="../title.html">Title Page</a></li><li class="chapter-item expanded affix "><a href="../copyright.html">Copyright</a></li><li class="chapter-item expanded affix "><a href="../preface.html">Preface</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="../intro/index.html" class="active"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../format/index.html"><strong aria-hidden="true">2.</strong> Formatting</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../format/line-len.html"><strong aria-hidden="true">2.1.</strong> Line Length</a></li><li class="chapter-item expanded "><a href="../format/spelling.html"><strong aria-hidden="true">2.2.</strong> Spelling and Abbreviations</a></li></ol></li><li class="chapter-item expanded "><a href="../names/index.html"><strong aria-hidden="true">3.</strong> Naming</a></li><li class="chapter-item expanded "><a href="../docs/index.html"><strong aria-hidden="true">4.</strong> Documentation</a></li><li class="chapter-item expanded "><a href="../repr/index.html"><strong aria-hidden="true">5.</strong> Data Representation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../repr/records.html"><strong aria-hidden="true">5.1.</strong> Records</a></li></ol></li><li class="chapter-item expanded "><a href="../errors/index.html"><strong aria-hidden="true">6.</strong> Errors</a></li><li class="chapter-item expanded "><a href="../psm/index.html"><strong aria-hidden="true">7.</strong> Processes, Servers and Messages</a></li><li class="chapter-item expanded "><a href="../swe/index.html"><strong aria-hidden="true">8.</strong> Software Engineering</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../swe/principles.html"><strong aria-hidden="true">8.1.</strong> Principles</a></li><li class="chapter-item expanded "><a href="../swe/priorities.html"><strong aria-hidden="true">8.2.</strong> Priorities</a></li><li class="chapter-item expanded "><a href="../swe/architecture.html"><strong aria-hidden="true">8.3.</strong> Architecture</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../feedback.html">Feedback</a></li><li class="chapter-item expanded affix "><a href="../redirects/docs.html">LFE Documentation</a></li><li class="chapter-item expanded affix "><a href="../redirects/rebar3.html">LFE rebar3 Plugin</a></li><li class="chapter-item expanded affix "><a href="../redirects/mdbook.html">Built with mdBook</a></li></ol>
+            <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">The LFE Style Guide</a></li><li class="chapter-item expanded affix "><a href="../title.html">Title Page</a></li><li class="chapter-item expanded affix "><a href="../copyright.html">Copyright</a></li><li class="chapter-item expanded affix "><a href="../preface.html">Preface</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="../intro/index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../format/index.html"><strong aria-hidden="true">2.</strong> Formatting</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../format/line-len.html"><strong aria-hidden="true">2.1.</strong> Line Length</a></li><li class="chapter-item expanded "><a href="../format/spelling.html"><strong aria-hidden="true">2.2.</strong> Spelling and Abbreviations</a></li></ol></li><li class="chapter-item expanded "><a href="../names/index.html"><strong aria-hidden="true">3.</strong> Naming</a></li><li class="chapter-item expanded "><a href="../docs/index.html"><strong aria-hidden="true">4.</strong> Documentation</a></li><li class="chapter-item expanded "><a href="../repr/index.html"><strong aria-hidden="true">5.</strong> Data Representation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../repr/records.html"><strong aria-hidden="true">5.1.</strong> Records</a></li></ol></li><li class="chapter-item expanded "><a href="../errors/index.html"><strong aria-hidden="true">6.</strong> Errors</a></li><li class="chapter-item expanded "><a href="../psm/index.html"><strong aria-hidden="true">7.</strong> Processes, Servers and Messages</a></li><li class="chapter-item expanded "><a href="../swe/index.html"><strong aria-hidden="true">8.</strong> Software Engineering</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../swe/principles.html"><strong aria-hidden="true">8.1.</strong> Principles</a></li><li class="chapter-item expanded "><a href="../swe/priorities.html" class="active"><strong aria-hidden="true">8.2.</strong> Priorities</a></li><li class="chapter-item expanded "><a href="../swe/architecture.html"><strong aria-hidden="true">8.3.</strong> Architecture</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../feedback.html">Feedback</a></li><li class="chapter-item expanded affix "><a href="../redirects/docs.html">LFE Documentation</a></li><li class="chapter-item expanded affix "><a href="../redirects/rebar3.html">LFE rebar3 Plugin</a></li><li class="chapter-item expanded affix "><a href="../redirects/mdbook.html">Built with mdBook</a></li></ol>
         </div>
         <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
     </nav>
@@ -176,21 +176,34 @@
 
             <div id="content" class="content">
                 <main>
-                    <h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
+                    <h1><a class="header" href="#priorities" id="priorities">Priorities</a></h1>
+<p>When making decisions about how to write a given piece of code, aim for the following -ilities in this priority order:</p>
+<ul>
+<li>Usability by the customer</li>
+<li>Debuggability/Testability</li>
+<li>Readability/Comprehensibility</li>
+<li>Extensibility/Modifiability</li>
+<li>Efficiency (of the LFE code at runtime)</li>
+</ul>
+<p>Most of these are obvious.</p>
+<p>Usability by the customer means that the system has to do what the customer requires; it has to handle the customer's transaction volumes, uptime requirements; etc.</p>
+<p>For the LFE efficiency point, given two options of equivalent complexity, pick the one that performs better. (This is often the same as the one that conses less, i.e. allocates less storage from the heap.)</p>
+<p>Given two options where one is more complex than the other, pick the simpler option and revisit the decision only if profiling shows it to be a performance bottleneck.</p>
+<p>However, avoid premature optimization. Don't add complexity to speed up something that runs rarely, since in the long run, it matters less whether such code is fast.</p>
 
                 </main>
 
                 <nav class="nav-wrapper" aria-label="Page navigation">
                     <!-- Mobile navigation buttons -->
                     
-                    <a rel="prev" href="../preface.html" class="mobile-nav-chapters previous"
+                    <a rel="prev" href="../swe/principles.html" class="mobile-nav-chapters previous"
                         title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                     
 
                     
-                    <a rel="next" href="../format/index.html" class="mobile-nav-chapters next"
+                    <a rel="next" href="../swe/architecture.html" class="mobile-nav-chapters next"
                         title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
@@ -203,14 +216,14 @@
 
         <nav class="nav-wide-wrapper" aria-label="Page navigation">
             
-            <a rel="prev" href="../preface.html" class="nav-chapters previous" title="Previous chapter"
+            <a rel="prev" href="../swe/principles.html" class="nav-chapters previous" title="Previous chapter"
                 aria-label="Previous chapter" aria-keyshortcuts="Left">
                 <i class="fa fa-angle-left"></i>
             </a>
             
 
             
-            <a rel="next" href="../format/index.html" class="nav-chapters next" title="Next chapter"
+            <a rel="next" href="../swe/architecture.html" class="nav-chapters next" title="Next chapter"
                 aria-label="Next chapter" aria-keyshortcuts="Right">
                 <i class="fa fa-angle-right"></i>
             </a>
